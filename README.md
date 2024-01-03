@@ -19,8 +19,8 @@ The API requires a .env file in the root directory with the following variables:
 ## Running the API
 Ensure Python 3.10 and dependencies are installed.
 Set the VALIDATION_TOKEN environment variable with your desired token.
-Run the app.py file:
-python3 app.py
+Run the run_server.py file:
+python3 run_server.py
 This will start the API on port 6000 in debug mode.
 
 
