@@ -6,6 +6,7 @@ import requests
 
 load_dotenv()
 GoogleSearch.SERP_API_KEY = os.getenv("SERPER_API_KEY")
+text_file_path = os.getenv("TEXT_FILE_PATH")
 print(os.getenv("SERPER_API_KEY"))
 
 
@@ -103,7 +104,7 @@ def store_web_data(query, top_n=7):
             continue
     
     try:
-        with open("text_data/scrapped_data.txt", "w+") as file:
+        with open(text_file_path, "w+") as file:
             file.write(data)
 
     except Exception as e:

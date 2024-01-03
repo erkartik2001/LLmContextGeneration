@@ -13,8 +13,8 @@ def generate_context(query):
                 return None
             
             context = query_docs(query=query)
-            print("Context Generated--->\n")
-            print(context)
+            # print("Context Generated--->\n")
+            # print(context)
             return context
         
         else:
@@ -25,5 +25,4 @@ def generate_context(query):
         return None
     
 
-generate_context("what is monopoly")
 

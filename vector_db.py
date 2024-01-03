@@ -10,9 +10,10 @@ import re
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
+persist_dir = os.getenv("VECTOR_DB_DIR_PATH")
 openai.api_key = openai_api_key
-print("8888-",openai_api_key)
-client = chromadb.PersistentClient("db/")
+
+client = chromadb.PersistentClient(persist_dir)
 embedding = "text-embedding-ada-002"
 
 embedding_function = embedding_functions.OpenAIEmbeddingFunction(api_key=openai_api_key, model_name=embedding)
@@ -47,7 +48,7 @@ def store_docs_embedding():
         document = SimpleDirectoryReader(path).load_data()
         index = VectorStoreIndex.from_documents(documents=document,storage_context=stcontext)
 
-        index._storage_context.persist("db/")
+        index._storage_context.persist(persist_dir)
     
     except Exception as e:
         print(f"Error storing doucment embeddding : {e}")
