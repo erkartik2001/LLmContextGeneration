@@ -6,9 +6,8 @@ import requests
 
 load_dotenv()
 GoogleSearch.SERP_API_KEY = os.getenv("SERPER_API_KEY")
-text_file_path = os.getenv("TEXT_FILE_PATH")
-print(os.getenv("SERPER_API_KEY"))
-
+text_file_path = os.getenv("SCRAPPED_DATA_PATH")
+text_file_path = text_file_path +"/web_data.txt"
 
 def search_query(query):
     """"
